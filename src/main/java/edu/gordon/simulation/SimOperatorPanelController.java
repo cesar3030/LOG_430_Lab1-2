@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * The controller class of the SimOperatorPanel
+ * The controller class for the SimOperatorPanel
  */
 public class SimOperatorPanelController {
 
