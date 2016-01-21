@@ -4,8 +4,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-//David has view the changes
-
 /**
  * The controller class for the ATMPanel
  */
