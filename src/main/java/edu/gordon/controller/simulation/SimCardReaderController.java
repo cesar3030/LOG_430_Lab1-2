@@ -1,4 +1,7 @@
-package edu.gordon.simulation;
+package edu.gordon.controller.simulation;
+
+import edu.gordon.simulation.Simulation;
+import edu.gordon.view.simulation.SimCardReader;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,7 +29,7 @@ public class SimCardReaderController {
 
     /** Animate card going into the machine
      */
-    void animateInsertion()
+    public void animateInsertion()
     {
         originalBounds = button.getBounds();
         Rectangle currentBounds =
@@ -60,7 +63,7 @@ public class SimCardReaderController {
 
     /** Animate ejecting the card that is currently inside the reader.
      */
-    void animateEjection()
+    public void animateEjection()
     {
         button.setLabel("Ejecting card");
         button.setVisible(true);
@@ -97,7 +100,7 @@ public class SimCardReaderController {
     /** Animate retaining the card that is currently inside the reader for action by the
      *  bank.
      */
-    void animateRetention()
+    public void animateRetention()
     {
         button.setLabel("Click to insert card");
         button.setVisible(true);
