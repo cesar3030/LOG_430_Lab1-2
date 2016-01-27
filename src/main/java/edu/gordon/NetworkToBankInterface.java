@@ -1,13 +1,8 @@
 package edu.gordon;
 
-import java.net.InetAddress;
-
-import edu.gordon.atm.physical.Log;
 import edu.gordon.banking.Balances;
 import edu.gordon.banking.Message;
 import edu.gordon.banking.Status;
-import edu.gordon.simulation.Simulation;
-
 
 /** Interface
  */
@@ -31,12 +26,4 @@ public interface NetworkToBankInterface
      *  @return status code returned by bank
      */
     public Status sendMessage(Message message, Balances balances);
-    
-    // Log into which to record messages
-    
-    public Log log =null;
-    
-    // Network address of the bank
-    
-    public InetAddress bankAddress = null;
 }
