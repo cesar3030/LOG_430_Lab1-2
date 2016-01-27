@@ -1,5 +1,7 @@
 package edu.gordon.simulation;
 
+import edu.gordon.view.simulation.SimOperatorPanel;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
