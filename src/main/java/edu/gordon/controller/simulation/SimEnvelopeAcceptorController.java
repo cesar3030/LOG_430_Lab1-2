@@ -1,4 +1,6 @@
-package edu.gordon.simulation;
+package edu.gordon.controller.simulation;
+
+import edu.gordon.view.simulation.SimEnvelopeAcceptor;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

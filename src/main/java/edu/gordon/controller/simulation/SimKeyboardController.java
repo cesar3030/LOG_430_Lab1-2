@@ -1,5 +1,8 @@
-package edu.gordon.simulation;
+package edu.gordon.controller.simulation;
 
+import edu.gordon.simulation.SimDisplay;
+import edu.gordon.simulation.Simulation;
+import edu.gordon.view.simulation.SimEnvelopeAcceptor;
 import edu.gordon.view.simulation.SimKeyboard;
 
 import java.awt.*;
@@ -145,7 +148,7 @@ public class SimKeyboardController {
      *  @param maxValue the maximum acceptable value (used in MENU_MODE only)
      *  @return the line that was entered - null if user pressed CANCEL.
      */
-    synchronized String readInput(int mode, int maxValue)
+    public synchronized String readInput(int mode, int maxValue)
     {
         this.mode = mode;
         this.maxValue = maxValue;

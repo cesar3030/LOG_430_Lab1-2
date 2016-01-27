@@ -1,5 +1,6 @@
-package edu.gordon.simulation;
+package edu.gordon.controller.simulation;
 
+import edu.gordon.simulation.Simulation;
 import edu.gordon.view.simulation.SimOperatorPanel;
 
 import java.awt.*;
