@@ -1,7 +1,7 @@
 package edu.gordon.controller.simulation;
 
-import edu.gordon.simulation.Simulation;
-import edu.gordon.view.simulation.SimOperatorPanel;
+import edu.gordon.physical.Simulation;
+import edu.gordon.view.SimOperatorPanel;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,13 +15,14 @@ public class SimOperatorPanelController {
 
     /**
      * Constructor
+     * @param simulation
      * @param panel The panel linked to that controller
      */
-    public SimOperatorPanelController (final SimOperatorPanel panel) {
+    public SimOperatorPanelController(final Simulation simulation, final SimOperatorPanel panel) {
 
         final Button button = panel.getButton();
         final Label  message = panel.getMessage();
-        final Simulation simulation = panel.getSimulation();
+        //final Simulation simulation = panel.getSimulation();
 
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)

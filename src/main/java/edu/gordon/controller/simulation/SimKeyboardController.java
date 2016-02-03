@@ -1,9 +1,9 @@
 package edu.gordon.controller.simulation;
 
-import edu.gordon.simulation.SimDisplay;
-import edu.gordon.simulation.Simulation;
-import edu.gordon.view.simulation.SimEnvelopeAcceptor;
-import edu.gordon.view.simulation.SimKeyboard;
+import edu.gordon.physical.Simulation;
+import edu.gordon.view.SimDisplay;
+import edu.gordon.view.SimEnvelopeAcceptor;
+import edu.gordon.view.SimKeyboard;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

@@ -1,6 +1,5 @@
-edu.gordon
-edu.gordon.atm
-edu.gordon.atm.physical
-edu.gordon.atm.transaction
-edu.gordon.banking
-edu.gordon.simulation
+edu.gordon.controller.simulation
+edu.gordon.exception
+edu.gordon.model
+edu.gordon.physical
+edu.gordon.view
