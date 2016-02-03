@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>edu.gordon.model.ATMMain</OriginalElement>
+  <nodes>
+    <node x="78.0" y="735.0">edu.gordon.controller.simulation.SimOperatorPanelController</node>
+    <node x="186.0" y="235.0">edu.gordon.model.atm.transaction.Transaction</node>
+    <node x="756.0" y="533.0">edu.gordon.model.atm.physical.NetworkToBankSimulation</node>
+    <node x="9.0" y="211.0">edu.gordon.model.atm.transaction.Inquiry</node>
+    <node x="1131.0" y="285.0">edu.gordon.model.atm.physical.EnvelopeAcceptorSimulation</node>
+    <node x="249.0" y="-46.0">edu.gordon.model.atm.physical.CustomerConsoleSimulation</node>
+    <node x="986.0" y="250.0">edu.gordon.model.atm.physical.CashDispenser</node>
+    <node x="5.0" y="176.0">edu.gordon.model.atm.transaction.Deposit</node>
+    <node x="370.0" y="702.0">edu.gordon.model.SimulatedBank</node>
+    <node x="189.0" y="314.0">edu.gordon.controller.simulation.SimCardReaderController</node>
+    <node x="1010.0" y="443.0">edu.gordon.model.atm.physical.Log</node>
+    <node x="208.0" y="38.0">edu.gordon.model.atm.physical.OperatorPanelSimulation</node>
+    <node x="1138.0" y="100.0">edu.gordon.model.atm.Session</node>
+    <node x="329.0" y="582.0">edu.gordon.controller.simulation.Simulation</node>
+    <node x="-186.0" y="596.0">edu.gordon.controller.simulation.SimEnvelopeAcceptorController</node>
+    <node x="-34.0" y="463.0">edu.gordon.controller.simulation.SimKeyboardController</node>
+    <node x="-1.0" y="256.0">edu.gordon.model.atm.transaction.Transfer</node>
+    <node x="212.0" y="113.0">edu.gordon.controller.simulation.ATMPanelController</node>
+    <node x="601.0" y="521.0">edu.gordon.model.ATMMain</node>
+    <node x="-5.0" y="309.0">edu.gordon.model.atm.transaction.Withdrawal</node>
+    <node x="532.0" y="93.0">edu.gordon.model.atm.physical.CardReaderSimulation</node>
+    <node x="1045.0" y="-47.0">edu.gordon.model.atm.physical.ReceiptPrinterSimulation</node>
+    <node x="617.0" y="300.0">edu.gordon.model.atm.ATM</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.gordon.model.atm.ATM" target="edu.gordon.model.atm.physical.NetworkToBankSimulation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.ATM" target="edu.gordon.model.atm.physical.CardReaderSimulation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.transaction.Transaction" target="edu.gordon.model.atm.transaction.Deposit">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.controller.simulation.Simulation" target="edu.gordon.controller.simulation.SimOperatorPanelController">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.ATM" target="edu.gordon.model.atm.Session">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.ATM" target="edu.gordon.model.atm.physical.OperatorPanelSimulation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.physical.EnvelopeAcceptorSimulation" target="edu.gordon.model.atm.physical.Log">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.ATM" target="edu.gordon.model.atm.physical.EnvelopeAcceptorSimulation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.ATM" target="edu.gordon.model.atm.physical.CustomerConsoleSimulation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.ATMMain" target="edu.gordon.model.atm.ATM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.controller.simulation.Simulation" target="edu.gordon.controller.simulation.SimKeyboardController">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.transaction.Transaction" target="edu.gordon.model.atm.transaction.Withdrawal">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.transaction.Deposit" target="edu.gordon.model.atm.transaction.Transaction">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.ATM" target="edu.gordon.model.atm.physical.ReceiptPrinterSimulation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.ATM" target="edu.gordon.model.atm.physical.Log">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.physical.OperatorPanelSimulation" target="edu.gordon.model.atm.ATM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.controller.simulation.Simulation" target="edu.gordon.controller.simulation.SimCardReaderController">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.transaction.Transaction" target="edu.gordon.model.atm.transaction.Transfer">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.transaction.Transaction" target="edu.gordon.model.atm.transaction.Inquiry">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.controller.simulation.Simulation" target="edu.gordon.model.atm.ATM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.ATM" target="edu.gordon.model.atm.physical.CashDispenser">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.transaction.Inquiry" target="edu.gordon.model.atm.transaction.Transaction">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.transaction.Transfer" target="edu.gordon.model.atm.transaction.Transaction">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.transaction.Withdrawal" target="edu.gordon.model.atm.transaction.Transaction">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.physical.CashDispenser" target="edu.gordon.model.atm.physical.Log">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.controller.simulation.Simulation" target="edu.gordon.controller.simulation.SimEnvelopeAcceptorController">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.controller.simulation.Simulation" target="edu.gordon.model.SimulatedBank">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.Session" target="edu.gordon.model.atm.ATM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.transaction.Transaction" target="edu.gordon.model.atm.ATM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.atm.physical.NetworkToBankSimulation" target="edu.gordon.model.atm.physical.Log">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="edu.gordon.model.ATMMain" target="edu.gordon.controller.simulation.Simulation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="534.0" y="216.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

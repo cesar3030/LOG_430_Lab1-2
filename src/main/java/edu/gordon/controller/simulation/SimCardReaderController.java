@@ -1,7 +1,7 @@
 package edu.gordon.controller.simulation;
 
-import edu.gordon.simulation.Simulation;
-import edu.gordon.view.simulation.SimCardReader;
+import edu.gordon.physical.Simulation;
+import edu.gordon.view.SimCardReader;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
