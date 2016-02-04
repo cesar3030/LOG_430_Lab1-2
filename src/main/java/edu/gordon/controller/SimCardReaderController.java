@@ -1,4 +1,5 @@
-package edu.gordon.controller.simulation;
+package edu.gordon.controller;
+
 
 import edu.gordon.physical.Simulation;
 import edu.gordon.view.SimCardReader;
@@ -12,18 +13,29 @@ import java.awt.event.ActionListener;
  */
 public class SimCardReaderController {
 
+    /** To animate card insertion/ejection, we change the bounds of this button.
+     *  These are the original bounds we ultimately restore to
+     */
+    private Rectangle originalBounds;
+
+    /**
+     * The SimCardReader instance
+     */
     private SimCardReader button;
 
-    public SimCardReaderController(final Simulation simulation,SimCardReader button){
 
-        this.button = button;
+    public SimCardReaderController(final MainController mainController){
+
+        this.button = new SimCardReader();
 
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                simulation.cardInserted();
+                mainController.cardInserted();
             }
         });
     }
+
+
 
 
 
@@ -106,8 +118,21 @@ public class SimCardReaderController {
         button.setVisible(true);
     }
 
-    /** To animate card insertion/ejection, we change the bounds of this button.
-     *  These are the original bounds we ultimately restore to
+    /**
+     * Method that set the SimCardReader button visible or not
+     * @param value
      */
-    private Rectangle originalBounds;
+    public void setVisible(Boolean value){
+        button.setVisible(value);
+    }
+
+    /**
+     * getter
+     * @return SimCardReader
+     */
+    public SimCardReader getButton(){
+        return button;
+    }
+
+
 }
