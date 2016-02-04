@@ -1,4 +1,4 @@
-package edu.gordon.controller.simulation;
+package edu.gordon.controller;
 
 import edu.gordon.physical.Simulation;
 import edu.gordon.view.SimDisplay;
@@ -18,7 +18,7 @@ public class SimKeyboardController {
 
     /** The panel linked to this controller
      */
-    SimKeyboard simKeyboard;
+    private SimKeyboard simKeyboard;
 
     /** The display onto which to echo input
      */
@@ -68,14 +68,13 @@ public class SimKeyboardController {
      * Constructor
      *
      *  @param display the display on which to echo typed input
-     *  @param envelopeAcceptor - to be notified if cancel is pressed
      *
      */
-    public SimKeyboardController(SimKeyboard simKeyboard,SimDisplay display,SimEnvelopeAcceptor envelopeAcceptor) {
+    public SimKeyboardController(SimDisplay display, SimEnvelopeAcceptor simEnvelopeAcceptor) {
 
         this.display = display;
-        this.envelopeAcceptor = envelopeAcceptor;
-        this.simKeyboard = simKeyboard;
+        this.envelopeAcceptor = simEnvelopeAcceptor;
+        this.simKeyboard = new SimKeyboard();
 
         Button[] digitKey = simKeyboard.getDigitKey();
 
@@ -316,5 +315,7 @@ public class SimKeyboardController {
         display.setEcho(echo);
     }
 
-
+    public SimKeyboard getSimKeyboard() {
+        return simKeyboard;
+    }
 }

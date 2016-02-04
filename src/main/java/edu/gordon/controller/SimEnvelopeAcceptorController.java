@@ -1,4 +1,4 @@
-package edu.gordon.controller.simulation;
+package edu.gordon.controller;
 
 import edu.gordon.view.SimEnvelopeAcceptor;
 
@@ -11,13 +11,14 @@ import java.awt.event.ActionListener;
  */
 public class SimEnvelopeAcceptorController {
 
-  private final SimEnvelopeAcceptor simEnvelopeAcceptor;
+  private SimEnvelopeAcceptor simEnvelopeAcceptor;
 
     /**
      * Constructor
      */
-  public SimEnvelopeAcceptorController(final SimEnvelopeAcceptor simEnvelopeAcceptor){
-      this.simEnvelopeAcceptor = simEnvelopeAcceptor;
+  public SimEnvelopeAcceptorController(){
+
+      this.simEnvelopeAcceptor = new SimEnvelopeAcceptor();
 
       this.simEnvelopeAcceptor.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e)
@@ -31,6 +32,10 @@ public class SimEnvelopeAcceptorController {
       });
 
   }
+
+    public SimEnvelopeAcceptor getSimEnvelopeAcceptor() {
+        return simEnvelopeAcceptor;
+    }
 
     /** Simulate accepting an envelope from customer.
      *

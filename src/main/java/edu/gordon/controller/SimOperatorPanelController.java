@@ -1,4 +1,4 @@
-package edu.gordon.controller.simulation;
+package edu.gordon.controller;
 
 import edu.gordon.physical.Simulation;
 import edu.gordon.view.SimOperatorPanel;
@@ -13,12 +13,14 @@ import java.awt.event.ActionListener;
 public class SimOperatorPanelController {
 
 
+    private SimOperatorPanel panel;
+
     /**
      * Constructor
-     * @param simulation
-     * @param panel The panel linked to that controller
+     * @param mainController
      */
-    public SimOperatorPanelController(final Simulation simulation, final SimOperatorPanel panel) {
+    public SimOperatorPanelController(final MainController mainController) {
+        panel = new SimOperatorPanel();
 
         final Button button = panel.getButton();
         final Label  message = panel.getMessage();
@@ -32,14 +34,14 @@ public class SimOperatorPanelController {
                     message.setText("Click button to turn ATM on  ");
                     button.setLabel(" ON ");
 
-                    simulation.switchChanged(false);
+                    mainController.switchChangedSimulation(false);
                 }
                 else                                    // ATM is currently off
                 {
                     message.setText("Click button to turn ATM off");
                     button.setLabel("OFF");
 
-                    simulation.switchChanged(true);
+                    mainController.switchChangedSimulation(true);
                 }
             }
         });
@@ -68,6 +70,19 @@ public class SimOperatorPanelController {
                 }
             }
         }.start();
+    }
+
+
+    public SimOperatorPanel getPanel() {
+        return panel;
+    }
+
+    /**
+     * Method that Enable or disable the panel
+     * @param value Boolean
+     */
+    public void setEnabledPanel(Boolean value){
+        panel.setEnabled(value);
     }
 
 }
