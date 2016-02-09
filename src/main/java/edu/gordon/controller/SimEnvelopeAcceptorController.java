@@ -26,7 +26,7 @@ public class SimEnvelopeAcceptorController {
               synchronized(SimEnvelopeAcceptorController.this) //SimEnvelopeAcceptor.this <- default arg
               {
                   inserted = true;
-                  simEnvelopeAcceptor.notify();
+                  SimEnvelopeAcceptorController.this.notify();
               }
           }
       });
