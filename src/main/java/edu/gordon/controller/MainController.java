@@ -2,7 +2,6 @@ package edu.gordon.controller;
 
 import edu.gordon.model.Card;
 import edu.gordon.model.Money;
-import edu.gordon.physical.Simulation;
 import edu.gordon.view.GUI;
 
 import java.util.Observable;
