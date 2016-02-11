@@ -1,6 +1,5 @@
 package edu.gordon.controller;
 
-import edu.gordon.physical.Simulation;
 import edu.gordon.view.SimDisplay;
 import edu.gordon.view.SimEnvelopeAcceptor;
 import edu.gordon.view.SimKeyboard;
