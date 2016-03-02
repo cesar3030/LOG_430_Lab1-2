@@ -1,5 +1,7 @@
 package edu.gordon.controller;
 
+import com.google.common.eventbus.Subscribe;
+import edu.gordon.events.EjectCardEvent;
 import edu.gordon.view.SimOperatorPanel;
 
 import java.awt.*;
@@ -84,4 +86,8 @@ public class SimOperatorPanelController {
         panel.setEnabled(value);
     }
 
+    @Subscribe
+    public void listner(EjectCardEvent event){
+        this.setEnabledPanel(event.enablePanel);
+    }
 }

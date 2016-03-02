@@ -1,8 +1,9 @@
 package edu.gordon.controller;
 
 
+import com.google.common.eventbus.Subscribe;
+import edu.gordon.events.EjectCardEvent;
 import edu.gordon.view.SimCardReader;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -131,6 +132,11 @@ public class SimCardReaderController {
      */
     public SimCardReader getButton(){
         return button;
+    }
+
+    @Subscribe
+    public void listner(EjectCardEvent event){
+        this.animateEjection();
     }
 
 

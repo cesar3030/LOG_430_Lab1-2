@@ -36,6 +36,8 @@ public class MainController extends Observable {
                 simCashDispenserController.getSimCashDispenser(), envelopeAcceptorController.getSimEnvelopeAcceptor(), simReceiptPrinterController.getSimReceiptPrinter());
 
         EventBusManager.register(simDisplayController);
+        EventBusManager.register(cardReaderController);
+        EventBusManager.register(simOperatorPanelController);
 
     }
 
@@ -88,38 +90,22 @@ public class MainController extends Observable {
     }
 
     /**
-     * Write one or more lines to the display - beginning just after the
-     * last line written
-     *
-     * @param text the text to display
-     */
-    public void display(String text){
-        simDisplayController.display(text);
-    }
-
-    /** Clear the simulated display
-     */
-    public void clearDisplay(){
-        simDisplayController.clearDisplay();
-    }
-
-    /**
      * Simulate retaining a card
-     */
+
     public void retainCard(){
         cardReaderController.animateRetention();
         // Re-enable on-off switch
         simOperatorPanelController.setEnabledPanel(true);
-    }
+    }*/
 
     /**
      * Simulate ejecting a card
-     */
+
     public void ejectCard(){
         cardReaderController.animateEjection();
         // Re-enable on-off switch
         simOperatorPanelController.setEnabledPanel(true);
-    }
+    }*/
 
     /**
      * Simulate reading of a card
