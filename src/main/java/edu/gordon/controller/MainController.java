@@ -2,6 +2,7 @@ package edu.gordon.controller;
 
 import edu.gordon.model.Card;
 import edu.gordon.model.Money;
+import edu.gordon.physical.EventBusManager;
 import edu.gordon.view.GUI;
 
 import java.util.Observable;
@@ -33,6 +34,9 @@ public class MainController extends Observable {
 
         gui = new GUI(simOperatorPanelController.getPanel(),cardReaderController.getButton(), simDisplayController.getSimDisplay(), keyboardController.getSimKeyboard(),
                 simCashDispenserController.getSimCashDispenser(), envelopeAcceptorController.getSimEnvelopeAcceptor(), simReceiptPrinterController.getSimReceiptPrinter());
+
+        EventBusManager.register(simDisplayController);
+
     }
 
     /**
