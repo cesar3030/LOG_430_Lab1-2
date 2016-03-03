@@ -3,6 +3,9 @@ package edu.gordon.controller;
 
 import com.google.common.eventbus.Subscribe;
 import edu.gordon.events.EjectCardEvent;
+import edu.gordon.events.InsertedCardEvent;
+import edu.gordon.events.ReadCardEvent;
+import edu.gordon.physical.EventBusManager;
 import edu.gordon.view.SimCardReader;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -30,7 +33,8 @@ public class SimCardReaderController {
 
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                mainController.cardInserted();
+               //mainController.cardInserted();
+               EventBusManager.post(new InsertedCardEvent(true));
             }
         });
     }
@@ -139,5 +143,9 @@ public class SimCardReaderController {
         this.animateEjection();
     }
 
+    @Subscribe
+    public void listner(ReadCardEvent event){
+        this.animateInsertion();
+    }
 
 }

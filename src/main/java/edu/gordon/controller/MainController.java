@@ -1,5 +1,8 @@
 package edu.gordon.controller;
 
+import com.google.common.eventbus.Subscribe;
+import edu.gordon.events.ClearDisplayEvent;
+import edu.gordon.events.InsertedCardEvent;
 import edu.gordon.model.Card;
 import edu.gordon.model.Money;
 import edu.gordon.physical.EventBusManager;
@@ -38,6 +41,8 @@ public class MainController extends Observable {
         EventBusManager.register(simDisplayController);
         EventBusManager.register(cardReaderController);
         EventBusManager.register(simOperatorPanelController);
+        EventBusManager.register(gui);
+        EventBusManager.register(this);
 
     }
 
@@ -89,38 +94,22 @@ public class MainController extends Observable {
         return keyboardController.readInput(mode, maxValue);
     }
 
-    /**
-     * Simulate retaining a card
-
-    public void retainCard(){
-        cardReaderController.animateRetention();
-        // Re-enable on-off switch
-        simOperatorPanelController.setEnabledPanel(true);
-    }*/
-
-    /**
-     * Simulate ejecting a card
-
-    public void ejectCard(){
-        cardReaderController.animateEjection();
-        // Re-enable on-off switch
-        simOperatorPanelController.setEnabledPanel(true);
-    }*/
 
     /**
      * Simulate reading of a card
      *
      *  @return Card object representing information on the card if read
      *          successfully, null if not read successfully
-     */
+
     public Card readCard(){
         // Machine can't be turned off while there is a card in it
         simOperatorPanelController.setEnabledPanel(false);
         cardReaderController.animateInsertion();
+
         // Since we don't have a magnetic stripe reader, we'll simulate by
         // having customer type the card number in
         return gui.readCard();
-    }
+    }*/
 
 
     public void switchChangedSimulation(boolean on){
@@ -138,8 +127,15 @@ public class MainController extends Observable {
     public void cardInserted() {
        this.cardInserted=true;
         setChanged();
-        notifyObservers();
+         notifyObservers();
         //simulation.cardInserted();
+    }
+
+    @Subscribe
+    public void listner(InsertedCardEvent event){
+       this.cardInserted=true;
+       //setChanged();
+       //notifyObservers();
     }
 
     /**
