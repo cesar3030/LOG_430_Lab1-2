@@ -1,7 +1,11 @@
 package edu.gordon.controller;
 
+import com.google.common.eventbus.Subscribe;
+import edu.gordon.events.ClearDisplayEvent;
+import edu.gordon.events.InsertedCardEvent;
 import edu.gordon.model.Card;
 import edu.gordon.model.Money;
+import edu.gordon.physical.EventBusManager;
 import edu.gordon.view.GUI;
 
 import java.util.Observable;
@@ -9,10 +13,7 @@ import java.util.Observable;
 /**
  * Created by Iron_Cesar on 16-02-03.
  */
-public class MainController extends Observable {
-
-    public boolean switchValue = false;
-    public boolean cardInserted = false;
+public class MainController{
     private SimCardReaderController cardReaderController;
     private SimEnvelopeAcceptorController envelopeAcceptorController;
     private SimKeyboardController keyboardController;
@@ -33,15 +34,22 @@ public class MainController extends Observable {
 
         gui = new GUI(simOperatorPanelController.getPanel(),cardReaderController.getButton(), simDisplayController.getSimDisplay(), keyboardController.getSimKeyboard(),
                 simCashDispenserController.getSimCashDispenser(), envelopeAcceptorController.getSimEnvelopeAcceptor(), simReceiptPrinterController.getSimReceiptPrinter());
+
+        EventBusManager.register(simDisplayController);
+        EventBusManager.register(cardReaderController);
+        EventBusManager.register(simOperatorPanelController);
+        EventBusManager.register(gui);
+        EventBusManager.register(this);
+
     }
 
     /**
      * Method that set the CardReader visible or not
      * @param on boolean
-     */
+
     public void setVisibleCardReader(boolean on){
         cardReaderController.setVisible(on);
-    }
+    }*/
 
     /**
      * Method that print a receipt
@@ -83,83 +91,51 @@ public class MainController extends Observable {
         return keyboardController.readInput(mode, maxValue);
     }
 
-    /**
-     * Write one or more lines to the display - beginning just after the
-     * last line written
-     *
-     * @param text the text to display
-     */
-    public void display(String text){
-        simDisplayController.display(text);
-    }
-
-    /** Clear the simulated display
-     */
-    public void clearDisplay(){
-        simDisplayController.clearDisplay();
-    }
-
-    /**
-     * Simulate retaining a card
-     */
-    public void retainCard(){
-        cardReaderController.animateRetention();
-        // Re-enable on-off switch
-        simOperatorPanelController.setEnabledPanel(true);
-    }
-
-    /**
-     * Simulate ejecting a card
-     */
-    public void ejectCard(){
-        cardReaderController.animateEjection();
-        // Re-enable on-off switch
-        simOperatorPanelController.setEnabledPanel(true);
-    }
 
     /**
      * Simulate reading of a card
      *
      *  @return Card object representing information on the card if read
      *          successfully, null if not read successfully
-     */
+
     public Card readCard(){
         // Machine can't be turned off while there is a card in it
         simOperatorPanelController.setEnabledPanel(false);
         cardReaderController.animateInsertion();
+
         // Since we don't have a magnetic stripe reader, we'll simulate by
         // having customer type the card number in
         return gui.readCard();
-    }
+    }*/
 
-
+/*
     public void switchChangedSimulation(boolean on){
         setVisibleCardReader(on);
         this.switchValue = on;
         setChanged();
         notifyObservers();
         //simulation.switchChanged(on);
-    }
+    }*/
 
 
     /**
      * Notify ATM that a card has been inserted
-     */
+
     public void cardInserted() {
        this.cardInserted=true;
         setChanged();
-        notifyObservers();
+         notifyObservers();
         //simulation.cardInserted();
-    }
+    } */
 
     /**
      * Simulated getting initial amount of cash from operator
      *
      *  @return value of initial cash entered
-     */
+
     public Money getInitialCash(){
         return gui.getInitialCash();
-    }
+    }*/
 
     /** Simulate printing a line to the log
      *
