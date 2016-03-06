@@ -75,11 +75,11 @@ public class MainController{
      * @param amount the amount of cash to dispense
      *
      * Precondition: amount is <= cash on hand
-     */
+
     public void animateDispensingCash(Money amount){
         simCashDispenserController.animateDispensingCash(amount);
     }
-
+    */
     /**
      * Simulate reading input from the keyboard
      *
@@ -140,10 +140,10 @@ public class MainController{
     /** Simulate printing a line to the log
      *
      *  @param text the line to print
-     */
+
     public void printLogLine(String text){
         gui.printLogLine(text);
-    }
+    }*/
 
     public GUI getGui() {
         return gui;
