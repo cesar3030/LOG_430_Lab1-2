@@ -42,6 +42,8 @@ public class MainController{
         EventBusManager.register(this);
         EventBusManager.register(simCashDispenserController);
         EventBusManager.register(simReceiptPrinterController);
+        EventBusManager.register(keyboardController);
+        EventBusManager.register(envelopeAcceptorController);
 
     }
 
@@ -56,20 +58,12 @@ public class MainController{
     /**
      * Method that print a receipt
      * @param text The text to print
-     */
+
     public void printReceipt(String text){
         simReceiptPrinterController.println(text);
     }
-
-    /**
-     * Simulate accepting an envelope from customer.
-     *
-     * return true if an envelope was received within the prescribed time,
-     *        else false
      */
-    public boolean acceptEnvelope(){
-        return envelopeAcceptorController.acceptEnvelope();
-    }
+
 
     /**
      * Simulate dispensing cash to a customer
@@ -88,11 +82,11 @@ public class MainController{
      * @param mode the input mode to use - one of the constants defined below.
      * @param maxValue the maximum acceptable value (used in MENU_MODE only)
      * @return the line that was entered - null if user pressed CANCEL.
-     */
+
     public String readInput(int mode, int maxValue){
         return keyboardController.readInput(mode, maxValue);
     }
-
+     */
 
     /**
      * Simulate reading of a card
