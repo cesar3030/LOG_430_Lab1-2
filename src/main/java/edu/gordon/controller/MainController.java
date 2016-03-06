@@ -40,6 +40,8 @@ public class MainController{
         EventBusManager.register(simOperatorPanelController);
         EventBusManager.register(gui);
         EventBusManager.register(this);
+        EventBusManager.register(simCashDispenserController);
+        EventBusManager.register(simReceiptPrinterController);
 
     }
 
@@ -137,13 +139,7 @@ public class MainController{
         return gui.getInitialCash();
     }*/
 
-    /** Simulate printing a line to the log
-     *
-     *  @param text the line to print
 
-    public void printLogLine(String text){
-        gui.printLogLine(text);
-    }*/
 
     public GUI getGui() {
         return gui;

@@ -1,5 +1,7 @@
 package edu.gordon.controller;
 
+import com.google.common.eventbus.Subscribe;
+import edu.gordon.events.PrintReceiptEvent;
 import edu.gordon.view.SimReceiptPrinter;
 
 import java.awt.*;
@@ -36,5 +38,11 @@ public class SimReceiptPrinterController {
 
     public SimReceiptPrinter getSimReceiptPrinter() {
         return simReceiptPrinter;
+    }
+
+    @Subscribe
+    public void listner(PrintReceiptEvent event){
+        for(String line : event.receiptLines)
+            this.println(line);
     }
 }
