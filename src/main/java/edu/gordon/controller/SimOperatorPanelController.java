@@ -3,6 +3,9 @@ package edu.gordon.controller;
 import com.google.common.eventbus.Subscribe;
 import edu.gordon.events.CardEvent;
 import edu.gordon.events.EjectCardEvent;
+import edu.gordon.events.ReadCardEvent;
+import edu.gordon.events.SwitchStateEvent;
+import edu.gordon.physical.EventBusManager;
 import edu.gordon.view.SimOperatorPanel;
 
 import java.awt.*;
@@ -36,13 +39,15 @@ public class SimOperatorPanelController {
                     message.setText("Click button to turn ATM on  ");
                     button.setLabel(" ON ");
 
-                    mainController.switchChangedSimulation(false);
+                    //mainController.switchChangedSimulation(false);
+                    EventBusManager.post(new SwitchStateEvent(false));
                 } else                                    // ATM is currently off
                 {
                     message.setText("Click button to turn ATM off");
                     button.setLabel("OFF");
 
-                    mainController.switchChangedSimulation(true);
+                    //mainController.switchChangedSimulation(true);
+                    EventBusManager.post(new SwitchStateEvent(true));
                 }
             }
         });
@@ -83,6 +88,10 @@ public class SimOperatorPanelController {
         panel.setEnabled(value);
     }
 
+    /**
+     * Listner that show or hide the SimOperatorPanel
+     * @param event
+     */
     @Subscribe
     public void listner(CardEvent event) {
         if(event.isEnablePanel()!= null)

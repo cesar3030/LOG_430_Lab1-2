@@ -13,10 +13,7 @@ import java.util.Observable;
 /**
  * Created by Iron_Cesar on 16-02-03.
  */
-public class MainController extends Observable {
-
-    public boolean switchValue = false;
-    public boolean cardInserted = false;
+public class MainController{
     private SimCardReaderController cardReaderController;
     private SimEnvelopeAcceptorController envelopeAcceptorController;
     private SimKeyboardController keyboardController;
@@ -49,10 +46,10 @@ public class MainController extends Observable {
     /**
      * Method that set the CardReader visible or not
      * @param on boolean
-     */
+
     public void setVisibleCardReader(boolean on){
         cardReaderController.setVisible(on);
-    }
+    }*/
 
     /**
      * Method that print a receipt
@@ -111,41 +108,34 @@ public class MainController extends Observable {
         return gui.readCard();
     }*/
 
-
+/*
     public void switchChangedSimulation(boolean on){
         setVisibleCardReader(on);
         this.switchValue = on;
         setChanged();
         notifyObservers();
         //simulation.switchChanged(on);
-    }
+    }*/
 
 
     /**
      * Notify ATM that a card has been inserted
-     */
+
     public void cardInserted() {
        this.cardInserted=true;
         setChanged();
          notifyObservers();
         //simulation.cardInserted();
-    }
-
-    @Subscribe
-    public void listner(InsertedCardEvent event){
-       this.cardInserted=true;
-       //setChanged();
-       //notifyObservers();
-    }
+    } */
 
     /**
      * Simulated getting initial amount of cash from operator
      *
      *  @return value of initial cash entered
-     */
+
     public Money getInitialCash(){
         return gui.getInitialCash();
-    }
+    }*/
 
     /** Simulate printing a line to the log
      *

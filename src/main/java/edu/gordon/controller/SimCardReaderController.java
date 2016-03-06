@@ -5,6 +5,7 @@ import com.google.common.eventbus.Subscribe;
 import edu.gordon.events.EjectCardEvent;
 import edu.gordon.events.InsertedCardEvent;
 import edu.gordon.events.ReadCardEvent;
+import edu.gordon.events.SwitchStateEvent;
 import edu.gordon.physical.EventBusManager;
 import edu.gordon.view.SimCardReader;
 import java.awt.*;
@@ -34,7 +35,7 @@ public class SimCardReaderController {
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                //mainController.cardInserted();
-               EventBusManager.post(new InsertedCardEvent(true));
+               EventBusManager.post(new InsertedCardEvent());
             }
         });
     }
@@ -146,6 +147,15 @@ public class SimCardReaderController {
     @Subscribe
     public void listner(ReadCardEvent event){
         this.animateInsertion();
+    }
+
+    /**
+     * Listner that shows or hide the sim card button depending on the ATM state stored in the event
+     * @param event
+     */
+    @Subscribe
+    public void listner(SwitchStateEvent event){
+        this.setVisible(event.isTurnOn());
     }
 
 }

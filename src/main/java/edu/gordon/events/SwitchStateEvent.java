@@ -2,6 +2,7 @@ package edu.gordon.events;
 
 /**
  * Created by Cesar Jeanroy on 16-03-03.
+ * Method that is use to turn ON or OFF the ATM
  */
 public class SwitchStateEvent {
     //ATM State
