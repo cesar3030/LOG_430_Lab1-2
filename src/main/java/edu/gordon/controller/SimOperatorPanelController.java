@@ -1,11 +1,9 @@
 package edu.gordon.controller;
 
 import com.google.common.eventbus.Subscribe;
-import edu.gordon.events.CardEvent;
-import edu.gordon.events.EjectCardEvent;
-import edu.gordon.events.ReadCardEvent;
-import edu.gordon.events.SwitchStateEvent;
-import edu.gordon.physical.EventBusManager;
+import edu.gordon.model.event.CardEvent;
+import edu.gordon.model.event.SwitchStateEvent;
+import edu.gordon.utils.EventBusManager;
 import edu.gordon.view.SimOperatorPanel;
 
 import java.awt.*;

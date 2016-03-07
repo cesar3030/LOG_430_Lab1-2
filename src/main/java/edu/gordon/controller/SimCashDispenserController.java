@@ -1,7 +1,7 @@
 package edu.gordon.controller;
 
 import com.google.common.eventbus.Subscribe;
-import edu.gordon.events.DispenseCashEvent;
+import edu.gordon.model.event.DispenseCashEvent;
 import edu.gordon.model.Money;
 import edu.gordon.view.SimCashDispenser;
 

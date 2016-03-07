@@ -1,7 +1,7 @@
 package edu.gordon.controller;
 
 import com.google.common.eventbus.Subscribe;
-import edu.gordon.events.AcceptEnvelopeEvent;
+import edu.gordon.model.event.AcceptEnvelopeEvent;
 import edu.gordon.view.SimEnvelopeAcceptor;
 
 import java.awt.*;

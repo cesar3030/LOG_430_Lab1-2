@@ -1,4 +1,4 @@
-package edu.gordon.events;
+package edu.gordon.model.event;
 
 /**
  * Event throw when the display need to be clear.

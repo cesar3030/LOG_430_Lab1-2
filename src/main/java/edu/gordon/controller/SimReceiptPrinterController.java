@@ -1,7 +1,7 @@
 package edu.gordon.controller;
 
 import com.google.common.eventbus.Subscribe;
-import edu.gordon.events.PrintReceiptEvent;
+import edu.gordon.model.event.PrintReceiptEvent;
 import edu.gordon.view.SimReceiptPrinter;
 
 import java.awt.*;

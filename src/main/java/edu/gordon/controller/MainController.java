@@ -1,14 +1,7 @@
 package edu.gordon.controller;
 
-import com.google.common.eventbus.Subscribe;
-import edu.gordon.events.ClearDisplayEvent;
-import edu.gordon.events.InsertedCardEvent;
-import edu.gordon.model.Card;
-import edu.gordon.model.Money;
-import edu.gordon.physical.EventBusManager;
+import edu.gordon.utils.EventBusManager;
 import edu.gordon.view.GUI;
-
-import java.util.Observable;
 
 /**
  * Created by Iron_Cesar on 16-02-03.

@@ -1,7 +1,7 @@
 package edu.gordon.controller;
 
 import com.google.common.eventbus.Subscribe;
-import edu.gordon.events.ReadInputEvent;
+import edu.gordon.model.event.ReadInputEvent;
 import edu.gordon.physical.Simulation;
 import edu.gordon.view.SimDisplay;
 import edu.gordon.view.SimEnvelopeAcceptor;

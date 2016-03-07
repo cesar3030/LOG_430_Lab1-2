@@ -1,4 +1,4 @@
-package edu.gordon.events;
+package edu.gordon.model.event;
 
 import java.util.ArrayList;
 

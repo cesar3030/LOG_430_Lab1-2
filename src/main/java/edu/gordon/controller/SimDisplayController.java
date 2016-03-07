@@ -1,8 +1,8 @@
 package edu.gordon.controller;
 
 import com.google.common.eventbus.Subscribe;
-import edu.gordon.events.ClearDisplayEvent;
-import edu.gordon.events.DisplayMessageEvent;
+import edu.gordon.model.event.ClearDisplayEvent;
+import edu.gordon.model.event.DisplayMessageEvent;
 import edu.gordon.view.SimDisplay;
 
 import java.awt.*;
