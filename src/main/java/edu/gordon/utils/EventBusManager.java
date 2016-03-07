@@ -1,4 +1,4 @@
-package edu.gordon.physical;
+package edu.gordon.utils;
 
 import com.google.common.eventbus.EventBus;
 

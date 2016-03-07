@@ -1,5 +1,7 @@
 package edu.gordon.controller;
 
+import com.google.common.eventbus.Subscribe;
+import edu.gordon.model.event.DispenseCashEvent;
 import edu.gordon.model.Money;
 import edu.gordon.view.SimCashDispenser;
 
@@ -43,6 +45,15 @@ public class SimCashDispenserController {
             { }
             label.setVisible(false);
         }
+    }
+
+    /**
+     * Event that execute the dispensing cash if amount is <= cash on hand
+     * @param event
+     */
+    @Subscribe
+    public void listner(DispenseCashEvent event){
+        this.animateDispensingCash(event.amount);
     }
 
 

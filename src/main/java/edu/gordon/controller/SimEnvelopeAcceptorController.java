@@ -1,5 +1,7 @@
 package edu.gordon.controller;
 
+import com.google.common.eventbus.Subscribe;
+import edu.gordon.model.event.AcceptEnvelopeEvent;
 import edu.gordon.view.SimEnvelopeAcceptor;
 
 import java.awt.*;
@@ -104,6 +106,11 @@ public class SimEnvelopeAcceptorController {
     {
         notify();       // End the wait for the envelope - inserted will still
         // be false so acceptEnvelope() will return false
+    }
+
+    @Subscribe
+    public void listner(AcceptEnvelopeEvent event){
+        event.inserted = this.acceptEnvelope();
     }
 
     /** Becomes true when an envelope has been inserted

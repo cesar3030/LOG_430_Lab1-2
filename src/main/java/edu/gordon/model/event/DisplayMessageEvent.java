@@ -1,4 +1,4 @@
-package edu.gordon.events;
+package edu.gordon.model.event;
 
 /**
  * Created by Iron_Cesar on 16-03-02.

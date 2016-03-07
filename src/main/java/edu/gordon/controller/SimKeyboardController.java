@@ -1,5 +1,7 @@
 package edu.gordon.controller;
 
+import com.google.common.eventbus.Subscribe;
+import edu.gordon.model.event.ReadInputEvent;
 import edu.gordon.physical.Simulation;
 import edu.gordon.view.SimDisplay;
 import edu.gordon.view.SimEnvelopeAcceptor;
@@ -317,5 +319,10 @@ public class SimKeyboardController {
 
     public SimKeyboard getSimKeyboard() {
         return simKeyboard;
+    }
+
+    @Subscribe
+    public void listner(ReadInputEvent event){
+        event.input = this.readInput(event.mode,event.maxValue);
     }
 }
